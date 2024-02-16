@@ -1,0 +1,18 @@
+import = [
+    "~/.config/alacritty/themes/themes/citylights.toml"
+# argonaut
+]
+
+live_config_reload = true
+
+[env]
+FOO = "BAR"
+
+[window]
+opacity = 0.75
+dynamic_title = true
+
+[font]
+size = 16
+
+
