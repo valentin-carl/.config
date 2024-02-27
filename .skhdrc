@@ -1,0 +1,41 @@
+# prevent skhd from monitoring events for specific applications.
+.blacklist [
+    "Slack"
+    "Messages"
+]
+
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# change focus
+alt - h : yabai -m window --focus west || $(yabai -m display --focus prev) || $(yabai -m display --focus 3) || $(yabai -m display --focus 2)   
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east || $(yabai -m display --focus next) || $(yabai -m display --focus 1) 
+
+# move windows left and right
+alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+alt + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+alt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+
+# go back to previous workspace (kind of like back_and_forth in i3)
+alt - b : yabai -m space --focus recent
+
+
+# switch between bsp and float for current window
+alt + shift - q : yabai -m window --toggle float
+
+# focus on previous window
+alt - b : yabai -m window --focus recent
+
+# toggle sticky
+alt - v : yabai -m window --toggle sticky
+
+# balance windows
+alt - m : yabai -m space --balance
+
+# switchting spaces
+ctrl - 6 : yabai -m space --focus 6
+ctrl - 7 : yabai -m space --focus 7
+ctrl - 8 : yabai -m space --focus 8
+ctrl - 9 : yabai -m space --focus 9
